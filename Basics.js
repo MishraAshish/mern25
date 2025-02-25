@@ -1,9 +1,9 @@
-console.log("sum of 5 and 5 is", 5+5)
+//console.log("sum of 5 and 5 is", 5+5)
 //var iknowJS = confirm("do you know js");
 //console.log(iknowJS);
 
 var counter = 0;
-console.log(counter)
+//console.log(counter)
 
 function incrementCounter() {
     counter++
@@ -13,8 +13,8 @@ function incrementCounter() {
         incrementCounter()
 }
 
-incrementCounter()
-console.log(counter)
+//incrementCounter()
+//console.log(counter)
 
 // var counter = 0;
 // console.log(counter)
@@ -45,5 +45,21 @@ console.log(counter)
 //typeof - var name is used to check the datatype
 
 //array can be created, and are dynamic
-var numbers = [1,2,3,4,5]
+//var numbers = [1,2,3,4,5]
 
+//identifiers/variables - case sensitive
+
+var my_Name = "Some name"
+var My_Name = "Some other name"
+
+//space not allowed, special chars apart from _,$ , others are not allowed
+
+var $myname = "Dollar Name",
+ _myname = "underscore Name",
+my_Name5 = "Numeric Name"
+ //5myname - starting from number is not allowed
+
+console.log(my_Name, My_Name, $myname, _myname , my_Name5)
+
+
+// operators
