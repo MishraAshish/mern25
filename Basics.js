@@ -6,12 +6,16 @@ var counter = 0;
 //console.log(counter)
 
 function incrementCounter() {
+    var counter2 = 1; //local variable of the function
     counter++
     console.log(counter)
+    //console.log(counter2)
 
     if(counter<10000)
         incrementCounter()
 }
+
+//console.log(counter2)
 
 //incrementCounter()
 //console.log(counter)
@@ -63,3 +67,13 @@ console.log(my_Name, My_Name, $myname, _myname , my_Name5)
 
 
 // operators
+
+
+
+//public Car {
+   // getCarSpecification(){ ..... }
+   // method1
+//}
+
+//myClass obj = new myClass()
+//obj.method1()
