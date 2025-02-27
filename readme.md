@@ -50,3 +50,34 @@ npm init - to initialize the project
 npm install or npm i - to install module dependency 
 npm uninstall or npm u - to uninstall module dependency 
 npm install -D or npm i -D  <package name>   -> to install module dependency
+
+
+//tools to install
+Installation of below stuffs needed
+//1. NODEJS
+	https://nodejs.org/en/download/ 
+
+//2. Visual Studio Code
+	https://code.visualstudio.com/
+	
+//3. MongoDB and Compass - install as service - go for free version
+	https://www.mongodb.com/
+	
+	Community Edition
+	https://www.mongodb.com/try/download/community
+	
+	
+	https://www.mongodb.com/try/download/enterprise
+	
+	Host : localhost:27017
+	Cluster : Standalone
+	Edition : MongoDB 6.0.0 Community (or above)
+	
+	mongodb-community server
+	https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-6.0.0-signed.msi
+	
+	-- when we get an option to run mongodb as service
+
+//4. GIT for windows and mac
+    https://git-scm.com/downloads
+   
