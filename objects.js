@@ -78,3 +78,37 @@ var NullCtrClass = Object.create(null)
 //create a student object
 //set some properties and display the information in
 //inherited object - SoftwareEngineer
+
+
+//5. Merging and preserving the immutability
+
+var user = {name : "Dat", id:2025, address : "Somewhere in Chicago"}
+var product = {name : "Dat", id:2025, deliveryAddress : "Somewhere in Newyork", product : "some electronic product"}
+
+var billing = {name : "Mr Jason", id:2030, amount : "$3000"}
+
+//we need to create the final object with details of delivery proposed
+
+var deliveryData = {};
+
+// deliveryData = {user, product}
+// user.mobile = "5552224444" //doesn't meets the preservation of immutability
+// console.log(deliveryData)
+
+user.mobile = "5552224444"
+
+deliveryData = Object.assign({}, user, product, billing) //the last source will replace common values
+
+//user.mobile = "5552224444" // this preserves the immutability
+
+console.log(deliveryData)
+
+
+// Questions -
+// Create a Person <few properties and a function to return them> and Inherit it as Student class and override the function
+// Inherit should be done both way's constructor and Object.Create
+// Create three objects and merge their propeties
+// Create a logical example of closure
+// Share few data objects from one file to another
+
+// once done create a git repo and push this answer and send me your github link with access
