@@ -14,9 +14,14 @@ function GetUserInfo(name, age, callback) {
 GetUserInfo("Jason", 21, PrintInfo)
 
 function Sum(p1, p2, callback) {
-    callback("Sum of values is ", p1+p2)
+    var sum = p1+p2;
+    callback("Sum of values is ", sum)
 }
 Sum(5,6, PrintInfo)
 
 
-//create an account class, and build a common function to print data use the common function as callback parameter
+//Question :
+//1. create a callback function example for account
+//2. PrintAccount details should accept this call back and the account information
+//3. Upon executing PrintAccntDetails it should show the account details with a message
+//4. Use the same call back to print multiple sessions planned for the day

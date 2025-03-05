@@ -15,6 +15,7 @@ function Encapsulation() {
     var password = "sdajkj#$@"; //private
     var accountOwner = "Jeremiah Dy"; //private
 
+    //child function - returning function
     var getAccountBalance = function (pass, showBalance) {
         if (password == pass && showBalance) {
             return {
