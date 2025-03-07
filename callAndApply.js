@@ -1,6 +1,8 @@
 //Call and Apply are the extended functions present in the function definition,which allows to change or update the scope of the
 // given function by passing the object as a parameter
 
+// Whenever we set object and invoke call or apply it immediately executes the function with the scope of new object passed
+
 //Call - function.call is used to accept first parameter as an object which we want to apply as scope in the function, 
 // and second and subsqeuent parameters will be used to pass function parameters
 
@@ -32,7 +34,7 @@ function PrintInfo(msg, additionalInfo) {
 
 //PrintInfo() //this execution of function happens in a global scope, which is js environment or node js envt
 
-PrintInfo.call(user1, "Software Engineer", "MERNStack Expert")
+PrintInfo.call(user1, "Software Engineer", "MERNStack Expert") //immediately executes and returns value with new object as its scope
 PrintInfo.call(user2, "IT Professional", "AI Expert")
 
 
