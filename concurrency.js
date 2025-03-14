@@ -7,12 +7,12 @@ setTimeout(function () {
         setTimeout(function () {
             console.log("Inner Callback")
         }, 0) // after 1 secnd
-}, 1000) //after 1 secnd
+}, 3000) //after 1 secnd
 
 
 setTimeout(function () {
     console.log("Second Callback")
-}, 2000) //after 1+2 secnd
+}, 3000) //after 1+2 secnd
 
 
 setTimeout(function () {
