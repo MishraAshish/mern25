@@ -4,7 +4,7 @@
 
 //1. Scope 
 //var - is functional scope
-//let and const are lexical scope
+//let and const are lexical scope or block scoped
 
 // {
 //     var name = "Var Name"
@@ -78,4 +78,4 @@ for (let index = 0; index < 5; index++) {
     }, 3000);
 }
 
-console.log(index)
+//console.log(index)
