@@ -1,4 +1,4 @@
-//October - MERNStack Session - Assessment Number 1 - 2nd October 2024
+//October - MERNStack Session - Assessment Number 1 - 14th March 2025
 
 //Q1. Create a file with name basics and show all the features that you know about javascript? (minimum 5 and maximum 8 topics)
 // Try explaining in 1-2 lines : example - Prototype : An object which behaves as a link between two functions and provides inheritance
