@@ -70,6 +70,8 @@ let promiseObj = new Promise((resolve, reject)=>{
 
 })
 
+//fullfilled and rejected
+
 console.log(promiseObj)
 
 promiseObj
