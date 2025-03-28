@@ -1,3 +1,7 @@
+// Generator - functions are special type of functions which can be invoked once and would yield the value
+// for as many times as we need
+// return - marks the end of execution
+// yield - is used to get the data on each function.next() call
 
 
 // function Add(p1, p2) {
