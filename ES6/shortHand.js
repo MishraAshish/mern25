@@ -18,24 +18,29 @@ let animalSoundES6 = {
     dogs,
 }
 
-console.log("Animal sounds with vanilla javascript ", animalSound)
+//console.log("Animal sounds with vanilla javascript ", animalSound)
 
-console.log("Animal sounds with ES6 short hand ", animalSoundES6)
+//console.log("Animal sounds with ES6 short hand ", animalSoundES6)
 
 //converting js object to string format 
 
 //typeof animalSoundES6 => toString() ==> [object Object]
 
-console.log(`Animal sounds with ES6 short hand ${animalSoundES6}`)
+//console.log(`Animal sounds with ES6 short hand ${animalSoundES6}`)
 
 //we need to convert the JSON object to string format by using helper function present in JSON object
-console.log(`Animal sounds with ES6 short hand ${JSON.stringify(animalSoundES6)}`)
+//console.log(`Animal sounds with ES6 short hand ${JSON.stringify(animalSoundES6)}`)
 
 
 //Task evaluate the out put and fix
-console.log("Animal sounds with vanilla javascript "+ animalSound)
+//console.log("Animal sounds with vanilla javascript "+ animalSound)
 
 
 //module.exports - is used to export in core js
 
 module.exports = animalSoundES6;
+
+globalThis.userInfo = {
+    Name : "Jeremiah Dy",
+    Session : "MERNStack"
+}
