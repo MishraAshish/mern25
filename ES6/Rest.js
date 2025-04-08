@@ -44,3 +44,27 @@
 // once installation of packages is done we don't share node_modules to repo but adding this to .gitignore and 
 // to install the already added packages in package.js we directly run below command
 // npm install     <this will install all the dependencies mentioned in package json>
+
+//to install dev dependeny we suffix with -D as below
+// npm i nodemon -D
+
+
+// www.myeducation.edu/
+
+//user - creation (CRUD)
+
+// www.myeducation.edu/api/user/create
+// www.myeducation.edu/api/user/update
+// www.myeducation.edu/api/user/delete
+
+//product - creation (CRUD)
+
+// www.myeducation.edu/api/product/create
+// www.myeducation.edu/api/product/update
+// www.myeducation.edu/api/product/delete
+
+
+// http request => http server => http modules (loading application request and response object) 
+// => Define Path to serve the request <route table>
+
+// express.router
