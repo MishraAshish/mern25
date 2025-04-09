@@ -68,3 +68,13 @@
 // => Define Path to serve the request <route table>
 
 // express.router
+
+
+//user
+//product
+//cart
+//reorder
+//cancelledorders
+//notifications
+
+

@@ -1,49 +1,21 @@
 let express = require('express')
-
 const app = express() //when we invoke it creates an express application which helps to build a web server
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
+const defaultRoute = require("./route/defaultRoute")
 
-app.get('/new', (req, res) => {
-    res.send("<h2>I know Express is very powerful</h2>")
-  })
+globalThis.rootPath = __dirname
 
-  app.get('/test', (req, res) => {
+//setting up the middleware static to handle all the static files we need to serve to client
+// serve static files like images css using static middleware 
+app.use('/static', express.static('public')) //localhost:9000/static/alert_info.js
 
-    console.log(req)
-    console.log(req.query)
-    res.json({
-        server : "Express",
-        endpoint : "Test",
-        api : "RestFul"
-    })
-  })
+app.use("/", defaultRoute) //redirecting all requests to default route to get served
 
 
-  //route param
-  //http://localhost:9000/test/2500?name=test&type=queryString
-  app.get('/test/:id', (req, res) => {
-    console.log(req.params["id"])
-    console.log(req.query)
-    res.json({
-        server : "Express",
-        endpoint : "Test",
-        api : "RestFul"
-    })
-  })
-
-  //http://localhost:9000/queryString?name=test&session=queryString
-  app.get('/queryString', (req, res) => {    
-    console.log(req.query)
-    res.json({
-        name : req.query["Name"],
-        session : req.query["session"],
-        api : "RestFul"
-    })
-  })
+//wild card operator
+// app.get('*', (req, res) => {
+//   res.send("__dirname+/Public/index.html")
+// })
 
 console.log("Rest API is listening at 9000")
-
 app.listen(9000)
