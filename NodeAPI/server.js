@@ -14,10 +14,5 @@ app.use("/", deafultApp) //=>  app.use("/student", studentApp)
 deafultApp.use("/",defaultRoute) //redirecting all requests to default route to get served
 
 
-//wild card operator
-// app.get('*', (req, res) => {
-//   res.send("__dirname+/Public/index.html")
-// })
-
 console.log("Rest API is listening at 9000")
 app.listen(9000)

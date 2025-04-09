@@ -55,7 +55,10 @@ router.get('/hello',(req, res)=>{
   })
 
 
-
+//wild card operator
+router.all('/{*any}', (req, res, next) => {
+    res.send("__dirname+/Public/index.html")
+  })
 
 
 module.exports = router;  
