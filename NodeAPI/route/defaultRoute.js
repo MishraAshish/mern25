@@ -57,7 +57,7 @@ router.get('/hello',(req, res)=>{
 
 //wild card operator
 router.all('/{*any}', (req, res, next) => {
-    res.send("__dirname+/Public/index.html")
+    res.sendFile(globalThis.rootPath+"/public/notFound.html")
   })
 
 
