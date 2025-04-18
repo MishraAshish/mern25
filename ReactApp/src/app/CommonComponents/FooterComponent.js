@@ -1,5 +1,6 @@
 import React from "react";
 
+//This is a functional component
 let Footer = (props)=>{
     
     return(
