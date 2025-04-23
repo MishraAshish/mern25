@@ -74,6 +74,8 @@ export default class ApplicationComponent extends Component {
                             <Route path="/" element={<Home user={this.state.user} />}/>
                             <Route path="home" element={<Home />}/>
                             <Route path="about" element={<About />}/>
+                            <Route path="about/:id" element={<About />}/>
+                            <Route path="about/:id/:name" element={<About />}/>
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     <Footer sessionName={this.sessionName}/>

@@ -3,25 +3,19 @@ import { useParams, useNavigate } from "react-router-dom";
 
 //a functional component using arrow function
 let About = (props)=>{
-    let params = useParams(); 
+    let params = useParams(); //initialized to be used to read the route param values
     let param = params && params["id"] ? params["id"]: 0; 
-    
-    //this.state = {userName : "Nilay!"}
-    //this.setState({userName : "BenMa"})
+    let name = params && params["name"] ? params["name"]: "No Name"; 
 
     //using functional hook - useState is replacement of setState and state
     let [userName, setUserName] = useState("Yao!") 
-    // let [userAge, setUserAge] = useState(20)
-    //let [user, setUser] = useState({userName :"Yao!", userAge : 19}) //in case to update the object
-
     //first hook that we are using in application
     let goToHome = useNavigate(); //helps to create route table on the fly and intercepted by BrowserRouter
 
     let onGoToHomeClick = (evt)=>{
         //goToHome("/Login");
         
-        setUserName("Silvia!!") //this will update the userName and re-render the about component
-
+        setUserName("Sravya!!") //this will update the userName and re-render the about component
         evt.preventDefault();//it stops the default behaviour like event propagation
     }
 
@@ -37,6 +31,8 @@ let About = (props)=>{
                 <p>id = {param}</p>
                 <p>Sum of Params = {parseInt(param) + parseInt(param)}</p>
                 <p>Multiple of Params = {parseInt(param) * parseInt(param)}</p>
+
+                <p>id = {name}</p>
 
                 <button className={"form-control btn btn-primary col-md-1"} 
                         onClick={onGoToHomeClick} 
