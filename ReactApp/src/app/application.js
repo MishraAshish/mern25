@@ -87,7 +87,11 @@ export default class ApplicationComponent extends Component {
 
 
 
+//create a route for your component with your name
+//navigate with route param with your emailid 
+//use another route param to send your next session details, this should be passed by clicking on botton not with nav-link
 
+//use - useNavigate and useParams hooks to demonstrate the features
 
 
 
