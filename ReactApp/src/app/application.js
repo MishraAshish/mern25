@@ -5,7 +5,7 @@ import Footer from "./CommonComponents/FooterComponent";
 import Header from "./CommonComponents/HeaderComponent";
 import Home from "./CommonComponents/HomeComponent";
 import NotFound from "./CommonComponents/NotFoundComponent";
-import About from "./CommonComponents/AboutComponent";
+import About from "./CommonComponents/AboutComponent.jsx";
 
 export default class ApplicationComponent extends Component {
 
@@ -17,7 +17,7 @@ export default class ApplicationComponent extends Component {
         this.state = {
             user : {
                     userName : "Test User",
-                    userAddress : "SomeAddress"
+                    userAge : 19
                     }
         }
         this.sessionName = "MERNStack - React Props"
@@ -72,10 +72,10 @@ export default class ApplicationComponent extends Component {
                     <Header />
                         <Routes>
                             <Route path="/" element={<Home user={this.state.user} />}/>
-                            <Route path="home" element={<Home />}/>
+                            <Route path="home" element={<Home user={this.state.user} />}/>
                             <Route path="about" element={<About />}/>
-                            <Route path="about/:id" element={<About />}/>
-                            <Route path="about/:id/:name" element={<About />}/>
+                            {/* <Route path="about/:id" element={<About />}/> */}
+                            {/* <Route path="about/:id/:name" element={<About />}/> */}
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     <Footer sessionName={this.sessionName}/>
