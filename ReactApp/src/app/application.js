@@ -6,6 +6,7 @@ import Header from "./CommonComponents/HeaderComponent";
 import Home from "./CommonComponents/HomeComponent";
 import NotFound from "./CommonComponents/NotFoundComponent";
 import About from "./CommonComponents/AboutComponent.jsx";
+import ComponentTypes from "./CommonComponents/ComponentTypes.js";
 
 export default class ApplicationComponent extends Component {
 
@@ -73,6 +74,7 @@ export default class ApplicationComponent extends Component {
                         <Routes>
                             <Route path="/" element={<Home user={this.state.user} />}/>
                             <Route path="home" element={<Home user={this.state.user} />}/>
+                            <Route path="comp" element={<ComponentTypes />}/>
                             <Route path="about" element={<About />}/>
                             {/* <Route path="about/:id" element={<About />}/> */}
                             {/* <Route path="about/:id/:name" element={<About />}/> */}
