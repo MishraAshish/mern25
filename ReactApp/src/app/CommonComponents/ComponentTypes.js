@@ -54,10 +54,16 @@ export default class ComponentTypes extends Component {
         evt.preventDefault();
     }
 
+    //
+
     render(){
         console.log("render call!!")
         return(
             <>
+                <hr/>
+                <label>{`User Age is - ${this.props.userAge}`}</label>
+                <button onClick={()=>this.props.passToParent(52)}>Pass To Parent </button>
+
                 <h1>Controlled Way component building using div based structure</h1>        
                 <div className="form col-md-12">
                      <div className="form-control">
@@ -106,6 +112,8 @@ export default class ComponentTypes extends Component {
 
                     <button type="submit"> Save </button>
                 </form>
+
+                
             </>
         )
     }
@@ -115,3 +123,6 @@ export default class ComponentTypes extends Component {
 //Task to complete on 1st May 2025
 // 1. create UserSignIn component using uncontrolled way, should be class component, userName, password, mobile can be passed and shown upon form submit, use a button to do the same
 // 2. create StudentSignIn component using controlled way, should be class component, userName, password, mobile can be passed and shown upon sign in clicj, use a button to do the same
+
+
+//https://github.com/MishraAshish/mern25/blob/master/ReactApp/src/app/CommonComponents/ComponentTypes.js

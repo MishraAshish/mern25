@@ -114,6 +114,13 @@ export default class Home extends PureComponent {
         //clearInterval(this.intervalObject);
     }
 
+    //defining the event handler to be executed by child component
+    eventToBeCalledFromChild = (userAge) => {
+        this.setState({
+            userAge
+        })
+    }
+
     //render life cycle method must be implemented to return the view/virtual dom/jsx
     render(){
         console.log("Home Render!!!")
@@ -130,10 +137,9 @@ export default class Home extends PureComponent {
                 {/* binding event to a button in react component */}
                 <button onClick={this.changeUserAddressEvent}>Change User Address</button>
 
-                {/* <Footer>
-                    <h4>Passed in the footer component as prop</h4>
-                    <ComponentTypes />
-                </Footer> */}
+                {/* child of home component */}
+                <ComponentTypes userAge={this.state.userAge} 
+                        passToParent={this.eventToBeCalledFromChild}/>
             </>
         )
     }
