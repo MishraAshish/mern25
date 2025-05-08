@@ -34,10 +34,10 @@ export default class Home extends PureComponent {
     componentDidMount(){
         console.log("componentDidMount" )
 
-        setTimeout(()=>{
-            this.userNameRef.current.value = "Value has been updated"
-            this.userNameRef.current.focus();
-        },2000)
+        // setTimeout(()=>{
+        //     this.userNameRef.current.value = "Value has been updated"
+        //     this.userNameRef.current.focus();
+        // },2000)
         
     }
 
@@ -125,22 +125,38 @@ export default class Home extends PureComponent {
     render(){
         console.log("Home Render!!!")
         return(
-            <>
-                <h1>Home Component</h1>  
+            <div className={"loadimage form"} style={{border:"1px solid red"}}>
+                <h1>{this.state.title}</h1>
+                <b className="feature">{"Product Feature's :"}</b>
+                <ul>                     
+                    <li>Sign up new users</li>
+                    <li>Login existing users.</li>                
+                    <li>Allow user's to add to cart.</li>
+                    <li>Save the user's cart.</li>
+                    <li>Checkout and pay for items.</li>
+                    <li>Allow users to cancel the order.</li>
+                    <li>Allow users to reorder the cart.</li>
+                    <li>Add products/items to create product collection.</li>
+                    <li>Allow users to give ratings to each product.</li>
+                    <li>Have notifications on top right with logout.</li>
+                </ul>
+            </div>
+            // <>
+            //     <h1>Home Component</h1>  
 
-                <input type="text" value={this.state.userName} ref={this.userNameRef} />
+            //     <input type="text" value={this.state.userName} ref={this.userNameRef} />
 
-                <label>{this.state.userAge}</label>
+            //     <label>{this.state.userAge}</label>
                 
-                <hr />
-                <label>{this.state.userAddress}</label>
-                {/* binding event to a button in react component */}
-                <button onClick={this.changeUserAddressEvent}>Change User Address</button>
+            //     <hr />
+            //     <label>{this.state.userAddress}</label>
+            //     {/* binding event to a button in react component */}
+            //     <button onClick={this.changeUserAddressEvent}>Change User Address</button>
 
-                {/* child of home component */}
-                <ComponentTypes userAge={this.state.userAge} 
-                        passToParent={this.eventToBeCalledFromChild}/>
-            </>
+            //     {/* child of home component */}
+            //     <ComponentTypes userAge={this.state.userAge} 
+            //             passToParent={this.eventToBeCalledFromChild}/>
+            // </>
         )
     }
 }
