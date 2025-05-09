@@ -6,3 +6,10 @@
 //4. add a condition in should component update, to not call the render method, if data is not updated
 //5. pass the previous state and prev props objects from getSnaphotbefore update life cycle method and use the same in 
 // Component Did update and use setState to change the value to previous state
+
+// Practice Questions 9th May 2025
+
+//- Create a functional component name Login
+//- Use Div Baased Structure to show text boxes for login details needs to be 4 
+//- Create one event handler and bind the state change with it to call re-render
+//- Use one of the textbox to change the data without using event handler, but using inline code
