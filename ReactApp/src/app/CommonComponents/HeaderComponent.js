@@ -1,8 +1,10 @@
 import React from "react"; // this is responsible to parse the JSX code
 import { NavLink, useNavigate } from "react-router-dom";
+import { connect } from "react-redux"; //helps to connect react component with redux store
 
 let Header = (props)=>{
     let user = props.user; //reading from mapStateToProps which reads from userReducer.user
+    
     console.log(user)
     
     const usrName = user && user.userName ? user.userName : "";
@@ -36,4 +38,11 @@ let Header = (props)=>{
     )
 }
 
-export default Header;
+//subscribing from store - mapStateToProps - allows to access the store data in react component as props
+let mapStateToProps = (store)=>{
+    return{
+        user : store.useReducer.user //this is accessing user data from user reducer and will be used in component as props
+    }
+}
+
+export default connect(mapStateToProps, null)(Header);

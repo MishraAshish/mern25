@@ -4,7 +4,9 @@
 // like - creating and updating a state (useState)
 // creating and updating the ref element (useRef)
 
-import React, { useState, useRef } from "react"
+import React, { useState, useRef } from "react";
+import { connect } from "react-redux"; //helps to connect react component with redux store
+import { SignInSignUpAction } from "../../State/User/UserAction";
 
 let UserComponent = (props)=>{
 
@@ -16,8 +18,8 @@ let UserComponent = (props)=>{
     //this.state.userName = "new name"
 
     //useState - hook implements an object to create the state and a callback to udpate the state
-    let [userName, updateUserName] = useState("Default User")
-    let [userAddress, updateUserAddress] = useState("Default Address")
+    let [userName, updateUserName] = useState(props.user.userName)
+    let [street, updateUserAddress] = useState(props.user.street)
 
 
     let textBoxOnChange = (evt)=>{
@@ -25,7 +27,17 @@ let UserComponent = (props)=>{
         updateUserName(evt.target.value) //works same way as setState to call react renderer
     }
 
-    let saveUserClick = ()=>{}
+    let saveUserClick = (evt)=>{
+        // let user = {
+        //     userName, street
+        // } 
+        props.sendToRedux({
+            userName, street, mobile : 598989, password : "asdasd"
+        })
+        alert("User send to signin via reducer")
+
+        evt.preventDefault();
+    }
 
     return(
         <>
@@ -45,7 +57,7 @@ let UserComponent = (props)=>{
                              <b>User Address</b>
                          </div>
                          <div className="col-md-7">
-                             <input type="text" className="form-control textbox userAddress" value={userAddress}
+                             <input type="text" className="form-control textbox userAddress" value={street}
                                  placeholder="Please provide user name" maxLength={30} 
                                     onChange={(evt)=>updateUserAddress(evt.target.value)}></input>
                          </div>
@@ -66,4 +78,21 @@ let UserComponent = (props)=>{
     )
 }
 
-export default UserComponent;
+//subscribing from store - mapStateToProps - allows to access the store data in react component as props
+let mapStateToProps = (store)=>{
+    return{
+        user : store.useReducer.user //this is accessing user data from user reducer and will be used in component as props
+    }
+}
+
+//publishing to store
+let mapDispatchToProps = (dispatch)=>{
+    return{
+        sendToRedux : (userData)=>{
+            dispatch(SignInSignUpAction(userData))
+        }
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserComponent);
