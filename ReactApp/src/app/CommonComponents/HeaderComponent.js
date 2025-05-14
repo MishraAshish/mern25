@@ -18,7 +18,7 @@ let Header = (props)=>{
     return(
         <>
             {usrName !=""?
-            <h2>Hi {usrName} , Welcome to Shopping Cart sponsored by Tech Team SIT</h2>:
+            <h2>Hi {usrName}, {user.mobile} , Welcome to Shopping Cart sponsored by Tech Team SIT</h2>:
             <h2>Welcome to Shopping Cart sponsored by Tech Team SIT,
                 <div><h3>Please click on login button to proceed to login.</h3></div>
             </h2>

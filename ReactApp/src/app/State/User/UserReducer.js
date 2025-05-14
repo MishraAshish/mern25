@@ -1,13 +1,14 @@
 //reducer is a function which allows to set the state when any component needs to access
 //this uses switch case statement to have multiple actions handling - create, update, delete etc
 //each reducer will further get combined as one entity in store and will be accessed by store object when it subscribes
+import * as actionTypes from "../ActionTypes"
 
 let initialState = {
     user : {
-        userName : "Tejasvi",
-        password : "Test",
-        street : "Somewhere on earth",
-        mobile : 898898989898
+        userName : "",
+        password : "",
+        street : "",
+        mobile : 0
     }
 }
 
@@ -19,7 +20,7 @@ let userReducer = (state = initialState, action) => {
     console.log("User Reduer ", action)
 
     switch (action.type) {
-        case "SignInSignUp":
+        case actionTypes.AddUserToStore:
             return {...state, user: action.payload}
     
         default:

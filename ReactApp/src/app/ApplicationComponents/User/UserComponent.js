@@ -6,7 +6,7 @@
 
 import React, { useState, useRef } from "react";
 import { connect } from "react-redux"; //helps to connect react component with redux store
-import { SignInSignUpAction } from "../../State/User/UserAction";
+import { AddUserToStore } from "../../State/User/UserAction";
 
 let UserComponent = (props)=>{
 
@@ -19,7 +19,9 @@ let UserComponent = (props)=>{
 
     //useState - hook implements an object to create the state and a callback to udpate the state
     let [userName, updateUserName] = useState(props.user.userName)
+    let [password, updateUserPassword] = useState(props.user.password)
     let [street, updateUserAddress] = useState(props.user.street)
+    let [mobile, updateUserMobile] = useState(props.user.mobile)
 
 
     let textBoxOnChange = (evt)=>{
@@ -31,10 +33,15 @@ let UserComponent = (props)=>{
         // let user = {
         //     userName, street
         // } 
-        props.sendToRedux({
-            userName, street, mobile : 598989, password : "asdasd"
+        //this is the call to dispatcher using action creater
+        props.addUser({
+            userName,
+            password, 
+            street, 
+            mobile
         })
-        alert("User send to signin via reducer")
+
+        //alert("User send to signin via reducer")
 
         evt.preventDefault();
     }
@@ -54,23 +61,37 @@ let UserComponent = (props)=>{
                      </div>
                      <div className="form-control">
                          <div className="col-md-3">
+                             <b>User Password</b>
+                         </div>
+                         <div className="col-md-7">
+                             <input type="password" className="form-control textbox" value={password}
+                                 placeholder="Please provide password" maxLength={30} 
+                                    onChange={(evt)=>updateUserPassword(evt.target.value)}></input>
+                         </div>
+                     </div>
+                     <div className="form-control">
+                         <div className="col-md-3">
                              <b>User Address</b>
                          </div>
                          <div className="col-md-7">
-                             <input type="text" className="form-control textbox userAddress" value={street}
-                                 placeholder="Please provide user name" maxLength={30} 
+                             <input type="text" className="form-control textbox" value={street}
+                                 placeholder="Please provide address" maxLength={30} 
                                     onChange={(evt)=>updateUserAddress(evt.target.value)}></input>
                          </div>
                      </div>
                      <div className="form-control">
                          <div className="col-md-3">
-                             <label>{"this.state.userName"}</label>
-                         </div>
-                         <div className="col-md-3">
-                             <label>{"this.state.userAddress"}</label>
+                             <b>User Mobile</b>
                          </div>
                          <div className="col-md-7">
-                             <input type="submit" className="form-control button" onClick={saveUserClick} value={"Save User"}></input>
+                             <input type="number" className="form-control textbox" value={mobile}
+                                 placeholder="Please provide user mobile" 
+                                    onChange={(evt)=>updateUserMobile(evt.target.value)}></input>
+                         </div>
+                     </div>
+                     <div className="form-control">
+                         <div className="col-md-7 button">
+                             <input type="submit" className="button" onClick={saveUserClick} value={"Save User"}></input>
                          </div>
                      </div>
                 </div>
@@ -88,8 +109,8 @@ let mapStateToProps = (store)=>{
 //publishing to store
 let mapDispatchToProps = (dispatch)=>{
     return{
-        sendToRedux : (userData)=>{
-            dispatch(SignInSignUpAction(userData))
+        addUser : (userData)=>{
+            dispatch(AddUserToStore(userData))//dispatcher works as a pipline to take the action to store
         }
     }
 };
