@@ -26,6 +26,7 @@ let Header = (props)=>{
             <div>
                 <NavLink to="/home"  className="button" activeclassname="true"> Home </NavLink>
                 <NavLink to="/user"  className="button" activeclassname="true"> Login </NavLink>
+                <NavLink to="/userhook"  className="button" activeclassname="true"> Login Hook </NavLink>
                 <NavLink to="/about"  className="button" activeclassname="true"> About </NavLink>
 
                 {/* <NavLink to="/comp"  className="button" activeclassname="true"> Controlled/UnControlled </NavLink> */}
@@ -41,7 +42,7 @@ let Header = (props)=>{
 //subscribing from store - mapStateToProps - allows to access the store data in react component as props
 let mapStateToProps = (store)=>{
     return{
-        user : store.useReducer.user //this is accessing user data from user reducer and will be used in component as props
+        user : store.userReducer.user //this is accessing user data from user reducer and will be used in component as props
     }
 }
 
