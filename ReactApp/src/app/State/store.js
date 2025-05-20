@@ -17,7 +17,7 @@ import userReducer from "./User/UserReducer";
 
 
 let rootReducer = combineReducers({
-    userReducer //useReducer : useReducer
+    userReducer //userReducer : userReducer
 })
 
 

@@ -107,7 +107,7 @@ export default UserComponent;
 // //subscribing from store - mapStateToProps - allows to access the store data in react component as props
 // let mapStateToProps = (store)=>{
 //     return{
-//         user : store.useReducer.user //this is accessing user data from user reducer and will be used in component as props
+//         user : store.userReducer.user //this is accessing user data from user reducer and will be used in component as props
 //     }
 // }
 

@@ -1,5 +1,5 @@
 import React, { Component, PureComponent } from "react";
-import {PropTypes} from "prop-types";
+import PropTypes from "prop-types";
 import ComponentTypes from "./ComponentTypes";
 import Footer from "./FooterComponent";
 
@@ -14,7 +14,7 @@ export default class Home extends PureComponent {
         super();
         //initializing the state/props/fields etc
         this.state = {
-            userName : props.user.userName,
+            userName : props.userName,
             userAge : props.user.userAge,
             userAddress : "No Space on earth!!",
             userData : props.userData
@@ -171,8 +171,9 @@ export default class Home extends PureComponent {
 //proptypes are used to mark the properties we use in the component as required so that it shows waring if not present
 //and can be fixed
 
-// Home.propTypes = {
-//     userName : PropTypes.string.isRequired,
-//     userAge : PropTypes.number.isRequired,
-//     userData : PropTypes.string.isRequired
-// }
+Home.propTypes = {
+    userName : PropTypes.string.isRequired,
+    user : PropTypes.object.isRequired,
+    // userAge : PropTypes.number.isRequired,
+    // userData : PropTypes.string.isRequired
+}
