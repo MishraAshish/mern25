@@ -10,7 +10,7 @@ let userDataModel = require("../DataModel/userDataModel");
 
 userRouter.post("/api/signinup",(req, res)=>{
     let userData = req.body; //this will be the user object inserted by end user at fron end
-    
+    console.log(userData)
     userDataModel.findOne({userName:req.body.userName}).then((existingUser)=>{
         
         if(existingUser){//user exists so send the user details - sign in
