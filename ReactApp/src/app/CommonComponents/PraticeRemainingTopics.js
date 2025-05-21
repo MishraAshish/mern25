@@ -13,3 +13,10 @@
 //- Use Div Baased Structure to show text boxes for login details needs to be 4 
 //- Create one event handler and bind the state change with it to call re-render
 //- Use one of the textbox to change the data without using event handler, but using inline code
+
+
+
+//21st May-2025
+
+//create complete sign-in and sign-up process for student component
+//reflect the saved values in one or the other component
