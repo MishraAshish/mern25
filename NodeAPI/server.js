@@ -6,8 +6,12 @@ const deafultApp = express();
 
 const userRoute = require("./route/userRoute")
 const userApp = express();
-const cors = require("cors");
 
+const productRoute = require("./route/productRoute")
+const productApp = express();
+
+//calling the cors instance 
+const cors = require("cors");
 
 globalThis.rootPath = __dirname
  
@@ -25,6 +29,8 @@ app.use(express.json({limit:'2mb', extended:false}));
 app.use("/user", userApp) 
 userApp.use("/",userRoute)
 
+app.use("/product", productApp) 
+productApp.use("/",productRoute)
 
 app.use("/", deafultApp) //=>  app.use("/student", studentApp) 
 deafultApp.use("/",defaultRoute) //redirecting all requests to default route to get served

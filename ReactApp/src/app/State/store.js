@@ -14,11 +14,13 @@ import { combineReducers } from "redux";
 import { configureStore } from '@reduxjs/toolkit';
 
 import userReducer from "./User/UserReducer";
+import productReducer from "./Product/ProductReducer";
 
 
 let rootReducer = combineReducers({
-    userReducer //userReducer : userReducer
-})
+    userReducer, //userReducer : userReducer
+    productReducer
+  })
 
 
 function logger({ getState }) {
