@@ -13,6 +13,7 @@ import UserHookComponent from "./ApplicationComponents/User/UserHooksComponent.j
 import ProductComponent from "./ApplicationComponents/Product/ProductComponent.js";
 import CartComponent from "./ApplicationComponents/Cart/CartComponent.js";
 import Checkout from "./ApplicationComponents/Checkout/CheckoutComponent.js";
+import Hooks from "./Hooks/UnderstandingHooks.js";
 
 export default class ApplicationComponent extends Component {
 
@@ -82,6 +83,7 @@ export default class ApplicationComponent extends Component {
                             <Route path="cart" element={<CartComponent />}/>
                             {/* <Route path="comp" element={<ComponentTypes />}/> */}
                             <Route path="about" element={<About />}/>
+                            <Route path="hook" element={<Hooks />}/>
                             {/* <Route path="about/:id" element={<About />}/> */}
                             {/* <Route path="about/:id/:name" element={<About />}/> */}
                             <Route path="*" element={<NotFound />} />
