@@ -1,4 +1,4 @@
-import * as ActionTypes from "../actionTypes";//alias import  
+import * as ActionTypes from "../ActionTypes";//alias import  
 
 const INITIAL_STATE ={  
     coupon : ""  

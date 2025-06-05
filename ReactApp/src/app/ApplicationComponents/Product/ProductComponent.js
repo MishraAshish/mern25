@@ -11,6 +11,7 @@ let ProductComponent = (props) => {
     let rating = useRef(null)
 
     let product = useSelector((state)=>state.productReducer.Product) //product reducer
+    let user = useSelector((state) => state.userReducer.user);
 
     let dispatchProduct = useDispatch();
 
@@ -19,11 +20,14 @@ let ProductComponent = (props) => {
     //if we dont pass the second parameter to initialize the state it will work as - shouldComponentUpdate
     //if we return a child function then it will work as - componentWillUnMount
     useEffect(()=>{
-        //initializing the values we read from reducer to our product state
-        name.current.value = product.name
-        price.current.value = product.price
-        desc.current.value = product.desc
-        rating.current.value = product.rating
+        if(user && user.userName == "admin")
+        {
+            //initializing the values we read from reducer to our product state
+            name.current.value = product.name
+            price.current.value = product.price
+            desc.current.value = product.desc
+            rating.current.value = product.rating
+        }
 
         //componentWillUnmount
         // return ()=>{
@@ -49,7 +53,7 @@ let ProductComponent = (props) => {
     return(
         <div className="col-md-12">
             <h1 className="col-md-12">Product component</h1>
-
+        {user && user.userName == "admin"&&
             <form className={"form componentClass"}>
                 <div className="form col-md-8">
                     <div className="col-md-12">
@@ -80,6 +84,7 @@ let ProductComponent = (props) => {
                         onClick={saveProductClick}/>
                 </div>
             </form>
+            }
             <hr/>
             <DisplayProducts />
         </div>
