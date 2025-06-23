@@ -1,3 +1,9 @@
+// 23-June-2025 - Logout Page
+// Create a Logout Page
+// Upon clicking on Logout link in header, it should redirect to this page
+// It should have a message - "You have been logged out successfully"
+// All the links in header should be hidden except Home, User and About
+
 // 13-June-2025 - Notifications
 
 // Show notification on top of header (Right Corner)
