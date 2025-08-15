@@ -1,4 +1,4 @@
-// System to help - Vaccination System
+// System to help - Vaccination System - Next Gen Health Care
 
 // Application should be developed to help government meet the vaccination task in collboration with Government and Private hospitals
 // Setup Needs to be done by Trainees (React(WebPack) and NodeAPI) both
