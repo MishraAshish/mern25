@@ -80,6 +80,7 @@ export default class Home extends PureComponent {
 
 
     //update life cycle methods called after render
+    //undo - example - if we want to maintain previous state or props
     getSnapshotBeforeUpdate(prevState, prevProps){
         console.log("getSnapshotBeforeUpdate");
         // console.log("prevState", prevState);
