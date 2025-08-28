@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Home} from './src/home/home';
+import { Home} from './components/home/home';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,8 @@ import { Home} from './src/home/home';
 })
 export class App {
   protected readonly title = signal('AngularApp');
+
+  inputCounter1 = 0;
+
+  numberDataOutput = 0;
 }
