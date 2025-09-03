@@ -1,12 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { UserServices } from '../../user-services';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.sass'
 })
 export class Home {
+
+  items: string[] = [];
+
+  constructor(private userService: UserServices) {
+    this.items = this.userService.getData();
+  }
+
   count :number = 0;
   count2 :number = 0;
   @Input() inputCounter: number = 0;
