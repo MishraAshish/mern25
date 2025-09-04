@@ -12,8 +12,15 @@ export class Home {
 
   items: string[] = [];
 
+  users: any;
+
   constructor(private userService: UserServices) {
-    this.items = this.userService.getData();
+    this.items = this.userService.getData(); //this service method is called to get data
+
+    this.userService.getUsers().subscribe((data) => {
+      this.users = data;
+      console.log('Users data fetched:', this.users);
+    });
   }
 
   count :number = 0;
