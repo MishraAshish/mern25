@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { UserServices } from '../../user-services';
 
 @Component({
@@ -14,12 +14,13 @@ export class Home {
 
   users: any;
 
-  constructor(private userService: UserServices) {
+  constructor(private userService: UserServices, private cdREf: ChangeDetectorRef) {
     this.items = this.userService.getData(); //this service method is called to get data
 
     this.userService.getUsers().subscribe((data) => {
       this.users = data;
       console.log('Users data fetched:', this.users);
+      this.cdREf.detectChanges(); // Manually trigger change detection
     });
   }
 

@@ -29,5 +29,15 @@
 
 
 <ul>
-    <li *ngFor="let item of users">{{ item._id }}</li>
+    <li *ngFor="let user of users">
+        {{ user.userName }},  {{ user.street }},  {{ user.mobile }}
+    </li>
 </ul>
+
+<!-- <div *ngIf="users$ | async as users">
+      @for (user2 of users; track user2.id) {
+        <p>{{ user2.name }}</p>
+      } @empty {
+        <p>No items found.</p>
+      }
+    </div> -->
