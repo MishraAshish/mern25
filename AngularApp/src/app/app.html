@@ -343,10 +343,16 @@
   <h4>Value recieved from child component {{numberDataOutput}} </h4>
 </div>
 
+<ul>
+        <li routerLink="/home">Home component</li>
+        <li routerLink="/about">About component</li>
+</ul>
+
+<app-header></app-header>
+
 <app-home (onCounterChange)="inputCounter1 = $event" [inputCounter]="5"
         [numberData]="99" (numberDataChange) = "numberDataOutput = $event"></app-home>
-
-
+<app-about></app-about>    
 <router-outlet />
 
 <!-- <h1>Display Value from child component {{inputCounter1}}</h1> -->
