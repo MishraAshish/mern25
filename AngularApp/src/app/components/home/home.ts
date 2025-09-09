@@ -4,7 +4,7 @@ import { UserServices } from '../../user-services';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [ CommonModule ],
   templateUrl: './home.html',
   styleUrl: './home.sass'
 })

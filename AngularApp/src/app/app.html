@@ -7,7 +7,7 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
+<!-- <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -180,9 +180,9 @@
       margin-block: 1.5rem;
     }
   }
-</style>
+</style> -->
 
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -329,7 +329,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -343,16 +343,19 @@
   <h4>Value recieved from child component {{numberDataOutput}} </h4>
 </div>
 
-<ul>
-        <li routerLink="/home">Home component</li>
-        <li routerLink="/about">About component</li>
-</ul>
-
 <app-header></app-header>
 
-<app-home (onCounterChange)="inputCounter1 = $event" [inputCounter]="5"
-        [numberData]="99" (numberDataChange) = "numberDataOutput = $event"></app-home>
-<app-about></app-about>    
+<ul>
+        <li><a routerLink="home"> Home </a></li>
+        <li><a routerLink="about"> About </a></li>
+        <li><a routerLink="user"> User </a></li>
+</ul>
 <router-outlet />
+
+
+<!-- <app-home (onCounterChange)="inputCounter1 = $event" [inputCounter]="5"
+        [numberData]="99" (numberDataChange) = "numberDataOutput = $event"></app-home>
+<app-about></app-about>     -->
+
 
 <!-- <h1>Display Value from child component {{inputCounter1}}</h1> -->
